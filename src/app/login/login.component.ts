@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Login } from '../login';
+import { Login } from '../model/login';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomerService } from '../customer.service';
-import { CustomerResponse } from '../customer-response';
+import { CustomerService } from '../service/customer.service';
+import { CustomerResponse } from '../model/customer-response';
 
 @Component({
   selector: 'app-login',
@@ -28,9 +28,10 @@ export class LoginComponent {
       this.customerResponse = data; 
       console.log(this.customerResponse);
       if (data!=null) {
+        localStorage.setItem('customerId', String(data.customerId));
         this.router.navigate(['/home'])
       }
-    }, (error: any) => console.error(error));
+    });
   }
 
 }

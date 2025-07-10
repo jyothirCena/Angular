@@ -1,4 +1,4 @@
 export class Login {
-    email: string | undefined;
+    customerId: number | undefined;
     password: string | undefined; 
 }

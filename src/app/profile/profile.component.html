@@ -1,0 +1,18 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow rounded w-100" style="max-width: 500px;">
+      <div class="card-body text-center">
+        <h4 class="card-title mb-1">{{ customer.customerName }}</h4>
+        <p class="text-muted mb-3">{{ customer.email }}</p>
+        <ul class="list-group list-group-flush text-start">
+          <li class="list-group-item"><strong>Customer ID:</strong> {{ customer.customerId }}</li>
+          <li class="list-group-item"><strong>Phone:</strong> {{ customer.number }}</li>
+          <li class="list-group-item"><strong>Email:</strong> {{ customer.email }}</li>
+          <li class="list-group-item"><strong>Address:</strong> {{ customer.address }}</li>
+        </ul>
+        <div class="mt-4 d-flex justify-content-center gap-3">
+          <button class="btn btn-outline-primary" (click)="editCustomer()">Edit</button>
+          <button class="btn btn-outline-danger" (click)="deleteCustomer()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
